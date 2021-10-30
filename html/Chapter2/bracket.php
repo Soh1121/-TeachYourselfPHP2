@@ -14,7 +14,7 @@
 	$data[3] = '本多';
 	$data[1] = '薄井';
 	$data[] = '矢吹';
-	print $data[4];
+	print_r($data);
 	?>
 </body>
 
