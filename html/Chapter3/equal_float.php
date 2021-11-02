@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>演算子</title>
+</head>
+
+<body>
+	<?php
+	const EPSILON = 0.00001;
+	$x = 0.123456;
+	$y = 0.123455;
+
+	var_dump(abs($x - $y) < EPSILON);
+	?>
+</body>
+
+</html>
