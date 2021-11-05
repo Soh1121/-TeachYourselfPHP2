@@ -15,12 +15,10 @@
 			<th>リンク元のURL</th>
 		</tr>
 		<?php
-		// ファイルを読み取り専用でオープン
-		$file = fopen('access.log', 'rb');
-		// ファイルを共有ロック
-		flock($file, LOCK_SH);
-		// 行単位でテキストを読み込み＆タブ文字で分割
-		while ($fline = fgets($file, 1024)) {
+		$file = file('access.log');
+		// 配列に格納された行を順に処理
+		foreach ($file as $fline) {
+			// タブ文字で行単位のテキストを分割
 			$line = explode("\t", $fline);
 			print '<tr>';
 			// 分割した結果を順に出力
@@ -29,10 +27,6 @@
 			}
 			print '</tr>';
 		}
-		// ロックの解除
-		flock($file, LOCK_UN);
-		// ファイルをクローズ
-		fclose($file);
 		?>
 	</table>
 </body>
