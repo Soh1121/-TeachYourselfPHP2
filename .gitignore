@@ -1,2 +1,6 @@
 mysql/
 phpmyadmin/
+
+##### Composer
+composer.phar
+/vendor/
