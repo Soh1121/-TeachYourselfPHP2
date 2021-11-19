@@ -1,3 +1,4 @@
+<?php require_once '../Encode.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,7 +10,7 @@
 </head>
 
 <body>
-	こんにちは、<?= $_POST['name'] ?>さん！
+	こんにちは、<?= e($_POST['name']) ?>さん！
 </body>
 
 </html>
