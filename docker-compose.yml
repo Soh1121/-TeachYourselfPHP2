@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    image: php:7.2-apache
+    build: ./
     volumes:
       - ./php.ini:/usr/local/etc/php/php.ini
       - ./html:/var/www/html
