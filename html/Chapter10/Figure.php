@@ -1,5 +1,5 @@
 <?php
-class Figure
+abstract class Figure
 {
 	// プロパティを定義（protected修飾子で制限）
 	protected $width;
@@ -11,9 +11,5 @@ class Figure
 		$this->height = $height;
 	}
 
-	// 面積を求める（中身はダミー）
-	public function getArea(): float
-	{
-		return 0;
-	}
+	protected abstract function getArea(): float;
 }
