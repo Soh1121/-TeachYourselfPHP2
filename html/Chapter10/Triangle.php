@@ -1,9 +1,18 @@
 <?php
-require_once 'Figure.php';
+require_once 'IFigure.php';
 
-class Triangle extends Figure
+class Triangle implements IFigure
 {
-	// 三角形の面積を求めるためのgetAreaメソッドを定義
+	// プロパティを定義
+	private $width;
+	private $height;
+	// コンストラクタでプロパティを初期化
+	public function __construct(float $width, float $height)
+	{
+		$this->width = $width;
+		$this->height = $height;
+	}
+	// IFigure::getAreaメソッドを実装
 	public function getArea(): float
 	{
 		return $this->width * $this->height / 2;
