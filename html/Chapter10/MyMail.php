@@ -31,6 +31,17 @@ class MyMail
 		unset($this->headers[$name]);
 	}
 
+	// 未定義のメソッドが呼び出された場合に実行
+	public function __call($name, $args)
+	{
+		// 引数が渡されなかった場合は、メソッド名に対応するキーの値を取得
+		if (count($args) === 0) {
+			return $this->headers[$name];
+		} else {
+			$this->headers[$name] = $args[0];
+		}
+	}
+
 	// プロパティ情報を基にメールを送信
 	public function send()
 	{
