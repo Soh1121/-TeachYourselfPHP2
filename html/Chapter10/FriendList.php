@@ -24,4 +24,11 @@ class FriendList implements IteratorAggregate
 	{
 		return $this->list[$index];
 	}
+
+	public function __clone()
+	{
+		foreach ($this->list as &$value) {
+			$value = clone $value;
+		}
+	}
 }
