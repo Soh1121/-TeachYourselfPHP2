@@ -18,4 +18,10 @@ class FriendList implements IteratorAggregate
 	{
 		$this->list[] = $p;
 	}
+
+	// 指定されたインデックス番号に対応するPersonオブジェクトを取得
+	public function __invoke($index)
+	{
+		return $this->list[$index];
+	}
 }
