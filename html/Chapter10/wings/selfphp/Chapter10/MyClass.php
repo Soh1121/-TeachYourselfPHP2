@@ -1,8 +1,8 @@
 <?php
 
-namespace Chapter10;
+namespace wings\selfphp\Chapter10;
 
-class MyClass_
+class MyClass
 {
 	// 現在の名前空間を表示するための静的メソッドshowNamespace
 	public static function showClass()
